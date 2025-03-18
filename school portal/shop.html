@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Purchase</title>
+    
+</head>
+<body>
+    
+    <div id="container">
+            
+    
+        <nav class="dashboard">
+            <h1><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a></h1>
+            <div class="first-list">
+                <ul>
+                    <li><a href="class.html"><i class="fa fa-book" aria-hidden="true"></i>Class-Room</a></li>
+                    <li><a href="timetable.html"><i class="fa fa-th" aria-hidden="true"></i>Timetable</a></li>
+                    <li><a href="assignment.html"><i class="fa fa-home" aria-hidden="true"></i>Assignment</a></li>
+                    <li><a href="cbt.html"><i class="fa fa-television" aria-hidden="true"></i>Take Cbt Text</a></li>
+                    <li><a href="results.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>Result</a></li>
+                </ul>
+            </div>
+            <div class="second-list">
+                <ul>
+                    <li><a href="shop.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>School Shop</a></li>
+                    <li><a href="bills.html"><i class="fa fa-usd" aria-hidden="true"></i>Bills Payment</a></li>
+                    <li><a href="learn.html"><i class="fa fa-calculator" aria-hidden="true"></i>Learning Aid</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="main">
+            <header class="top">
+                <div class="header-2">
+                    <div class="img">
+                        <img src="FB_IMG_17239030687553265.jpg" alt="User  Profile Picture">
+                    </div>
+                    <div class="txt">
+                        <label style="color: black;">Hi Amzy Dollar</label>
+                        <p style="color: black;">AMZY DOLLAR <label style="color: black;">(@gmail.com)</label></p>
+                    </div>
+                    <div class="bell">
+                        <div class="notification">
+                            <p style="color: black;">Notifications</p>
+                        </div>
+                        <div class="icon">
+                            <button aria-label="Notifications">
+                                <i class="fa fa-bell-o" aria-hidden="true"></i>
+                                <label style="color: red;">0</label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    <header>
+        <h1>School Shop <i class="fa fa-shopping-cart" aria-hidden="true"></i></h1>
+    </header>
+    <div class="container">
+        <div class="book-list">
+            <div class="book">
+                <img src="images (1).jpeg" alt="Book 1">
+                <h3>Book Title 1</h3>
+                <p>Price: #1500.00</p>
+                <button onclick="addToCart('Book Title 1', 10)">Add to Cart</button>
+            </div>
+            <div class="book">
+                <img src="images (2).jpeg" alt="Book 2">
+                <h3>Book Title 2</h3>
+                <p>Price: #1035.00</p>
+                <button onclick="addToCart('Book Title 2', 15)">Add to Cart</button>
+            </div>
+            <div class="book">
+                <img src="images (3).jpeg" alt="Book 3">
+                <h3>Book Title 3</h3>
+                <p>Price: #6000.00</p>
+                <button onclick="addToCart('Book Title 3', 20)">Add to Cart</button>
+            </div>
+            <div class="book">
+                <img src="images (4).jpeg" alt="Book 4">
+                <h3>Book Title 3</h3>
+                <p>Price: #2000.00</p>
+                <button onclick="addToCart('Book Title 4', 20)">Add to Cart</button>
+            </div>
+            <div class="book">
+                <img src="images (5).jpeg" alt="Book 5">
+                <h3>Book Title 3</h3>
+                <p>Price: #4000.00</p>
+                <button onclick="addToCart('Book Title 5', 25)">Add to Cart</button>
+            </div>
+            <div class="book">
+                <img src="images (6).jpeg" alt="Book 6">
+                <h3>Book Title 3</h3>
+                <p>Price: #3000.00</p>
+                <button onclick="addToCart('Book Title 6', 25)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="cart">
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="checkout">
+                <button onclick="checkout()">Checkout</ button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function addToCart(title, price) {
+            const item = { title, price };
+            cart.push(item);
+            displayCart();
+        }
+
+        function displayCart() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = '';
+            cart.forEach((item, index) => {
+                cartItemsDiv.innerHTML += `
+                    <div class="cart-item">
+                        <span>${item.title} - $${item.price.toFixed(2)}</span>
+                        <button onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                `;
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            displayCart();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            alert(`Total amount: $${total.toFixed(2)}. Thank you for your purchase!`);
+            cart = [];
+            displayCart();
+        }
+    </script>
+</body>
+</html>

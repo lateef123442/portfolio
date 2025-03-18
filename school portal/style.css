@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#container {
+    display: flex;
+}
+
+.dashboard {
+    background-color: blue;
+    width: 190px;
+    position: fixed;
+    height: 100vh;
+}
+
+.dashboard h1 a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.dashboard i {
+    padding-right: 7px;
+    padding-top: 20px;
+    padding-left: 7px;
+}
+
+.top {
+    border-bottom: 4px solid rgba(0, 0, 0, 0.447);
+    height: 60px;
+    flex-wrap: wrap;
+}
+
+.first-list ul,
+.second-list ul {
+    padding: 0;
+}
+
+
+.first-list ul li,
+.second-list ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+.first-list ul li a,
+.second-list ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+}
+
+.first-list ul li a::after,
+.second-list ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.first-list ul li a:hover::after,
+.second-list ul li a:hover::after {
+    width: 100%;
+}
+
+.main {
+    margin-left: 190px;
+    flex-grow: 1; /* Allow main to grow */
+}
+
+.header-2 {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-top: 30px;
+}
+
+.img {
+    margin-right: 20px;
+}
+
+.img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.bell {
+    margin-left: auto; /* Push bell to the right */
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.bell button {
+    border-radius: 100%;
+    width: 23px;
+    height: 23px;
+    border: none;
+    padding: 3px;
+    margin-left: 2px;
+}
+
+.bell button:hover {
+    background: rgba(0, 0, 0, 0.397);
+}
+
+.content {
+    background-color: blanchedalmond;
+    margin-top: 0;
+    padding: 20px; /* Add padding for content */
+}
+
+.content .home h1 {
+    margin: 20px 0;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.boxes > div {
+    background: red;
+    width: calc(33.33% - 20px); /* Responsive width */
+    height: 150px;
+    border-radius: 10px;
+    position: relative; /* For absolute positioning of icons */
+    margin-top: 20px;
+}
+
+.boxes .icon {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the icon */
+    text-decoration: none;
+    
+
+}
+
+.icon a {
+    text-decoration: none;
+    color:black;
+    font-size: 50px;
+}
+.icon a:hover{
+    color:white;
+}
+.icon a:active{
+    color: yellow;
+}
+
+
+
+.boxes .txt {
+    margin-top: 110px;
+    background: blue;
+    border-radius: 10px;
+    text-align: center; /* Center text */
+}
+
+.boxes .txt p {
+    color: #fff;
+    font-weight: 800;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+    .boxes > div {
+        width: calc(50% - 20px); /* Two boxes per row */
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .dashboard {
+        display: none; /* Hide sidebar on small screens */
+    }
+
+    .main {
+        margin-left: 0; /* Remove left margin */
+        width: 100%; /* Full width */
+    }
+
+    .bell {
+        margin-left: auto; /* Align bell to the right */
+    }
+
+    .boxes > div {
+        width: calc( 100% - 20px); /* Full width for small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-2 {
+        flex-direction: column; /* Stack header items */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .bell {
+        margin-top: 10px; /* Add space above bell */
+    }
+
+    .boxes {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center boxes */
+    }
+
+    .boxes > div {
+        width: 90%; /* Full width with some margin */
+    }
+}

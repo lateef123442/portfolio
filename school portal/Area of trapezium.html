@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Content Styles */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 200px auto;
+            padding: 40px 30px;
+            border: 3px solid rgba(0, 0, 0, 0.833);
+            box-shadow: 4px 4px 4px 4px;
+            width: 500px;
+        }
+
+        /* Input Styles */
+        input[type="text"] {
+            width: 100%;
+            height: 40px;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"]::placeholder {
+            text-align: center;
+        }
+
+        /* Button Styles */
+        input[type="submit"] {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            color: white;
+            background-color: red;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Label Styles */
+        label {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Header Styles */
+        h1 {
+            text-align: center;
+            color: white;
+            
+            padding: 10px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Link Styles */
+
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        
+    
+        <nav class="dashboard">
+            <h1><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a></h1>
+            <div class="first-list">
+                <ul>
+                    <li><a href="class.html"><i class="fa fa-book" aria-hidden="true"></i>Class-Room</a></li>
+                    <li><a href="timetable.html"><i class="fa fa-th" aria-hidden="true"></i>Timetable</a></li>
+                    <li><a href="assignment.html"><i class="fa fa-home" aria-hidden="true"></i>Assignment</a></li>
+                    <li><a href="cbt.html"><i class="fa fa-television" aria-hidden="true"></i>Take Cbt Text</a></li>
+                    <li><a href="results.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>Result</a></li>
+                </ul>
+            </div>
+            <div class="second-list">
+                <ul>
+                    <li><a href="shop.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>School Shop</a></li>
+                    <li><a href="bills.html"><i class="fa fa-usd" aria-hidden="true"></i>Bills Payment</a></li>
+                    <li><a href="learn.html"><i class="fa fa-calculator" aria-hidden="true"></i>Learning Aid</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="main">
+            <header class="top">
+                <div class="header-2">
+                    <div class="img">
+                        <img src="FB_IMG_17239030687553265.jpg" alt="User  Profile Picture">
+                    </div>
+                    <div class="txt">
+                        <label style="color: black;">Hi Amzy Dollar</label>
+                        <p style="color: black;">AMZY DOLLAR <label style="color: black;">(@gmail.com)</label></p>
+                    </div>
+                    <div class="bell">
+                        <div class="notification">
+                            <p style="color: black;">Notifications</p>
+                        </div>
+                        <div class="icon">
+                            <button aria-label="Notifications">
+                                <i class="fa fa-bell-o" aria-hidden="true"></i>
+                                <label style="color: red;">0</label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+        <div class="content">
+            <div class="main">
+                <div class="txt">
+                    <h1 style="color:black">Area of a Trapezium</h1>
+                </div>
+                <label for="Breadth">First Base (a)</label><br>
+                <input type="text" id="a1" ><br><br>
+
+                <label for="Height">Second Base (b)</label><br>
+                <input type="text" id="b1"><br><br>
+
+                <label for="Height">Height</label><br>
+                <input type="text" id="hght"><br><br>
+
+                <label for="answer">Answer</label><br>
+                <input type="text" readonly id="ans"><br><br>
+            </div>
+
+            <input type="submit" value="Comput The Area of The Trapezium" onclick="compute()"><br><br>
+
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     function compute(){
+    var a1=parseFloat(document.getElementById("a1").value);
+    var b1=parseFloat(document.getElementById("b1").value);
+    var hght=parseFloat(document.getElementById("hght").value);
+
+        var ans=((a1+b1)*hght)/2
+        document.getElementById("ans").value =ans 
+
+    }
+</script>

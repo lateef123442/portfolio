@@ -1,0 +1,94 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.book-list {
+    flex: 3;
+    margin-right: 20px;
+}
+.book {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.book img {
+    max-width: 100%;
+    height: auto;
+}
+.book h3 {
+    margin: 10px 0;
+    color: black;
+}
+.book p {
+    margin: 5px 0;
+    color: black;
+}
+.book button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.book button:hover {
+    background-color: #218838;
+}
+.cart {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.cart h2 {
+    margin-top: 0;
+    color: black;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.cart-item button {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.cart-item button:hover {
+    background-color: #c82333;
+}
+.checkout {
+    margin-top: 20px;
+    text-align: center;
+}
+.checkout button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.checkout button:hover {
+    background-color: #0056b3;
+}
