@@ -13,10 +13,12 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
+
         body {
             background-color: #121212;
             color: #ffffff;
         }
+
         header {
             background: url('your-background-image-url.jpg') no-repeat center center/cover;
             height: 100vh;
@@ -25,81 +27,110 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            animation: fadeIn 1s ease-in;
         }
+
         header h1 {
             font-size: 3rem;
             margin-bottom: 10px;
+            animation: slideIn 0.5s ease-out;
         }
+
         header p {
             font-size: 1.5rem;
             margin-bottom: 20px;
+            animation: slideIn 0.5s ease-out 0.3s forwards;
         }
+
         nav {
             position: absolute;
             top: 20px;
             right: 20px;
         }
+
         nav a {
             color: #ffffff;
             margin: 0 15px;
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.3s;
         }
+
+        nav a:hover {
+            color: #ff004f;
+        }
+
         section {
             padding: 60px 20px;
             text-align: center;
         }
+
         .about, .services, .portfolio {
             margin: 40px 0;
         }
+
         .about h2, .services h2, .portfolio h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            animation: fadeInUp 0.5s ease-in;
         }
+
         .about p, .services p {
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto;
         }
+
         .services {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
+
         .service {
             background: #1e1e1e;
             border-radius: 10px;
             padding: 20px;
             margin: 10px;
             width: 250px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 0.5s ease-in;
         }
+
         .service:hover {
             transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
+
         .service i {
             font-size: 40px;
             color: #ff004f;
             margin-bottom: 10px;
         }
+
         .portfolio {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
         }
+
         .portfolio-item {
             position: relative;
             overflow: hidden;
             border-radius: 10px;
+            animation: fadeInUp 0.5s ease-in;
         }
+
         .portfolio-item img {
             width: 100%;
             border-radius: 10px;
             transition: transform 0.3s;
         }
+
         .portfolio-item:hover img {
             transform: scale(1.1);
         }
+
         .portfolio-item .overlay {
             position: absolute;
             top: 0;
@@ -114,25 +145,99 @@
             transition: opacity 0.3s;
             border-radius: 10px;
         }
+
         .portfolio-item:hover .overlay {
             opacity: 1;
         }
+
         .portfolio-item h3 {
             color: #ffffff;
             margin-bottom: 10px;
         }
+
         .portfolio-item a {
             color: #ff004f;
             text-decoration: none;
             font-size: 18px;
         }
+
         footer {
             text-align: center;
             padding: 20px;
             background-color: #1e1e1e;
         }
+
         footer p {
             color: #ffffff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Contact Section Styles */
+        .contact {
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .contact h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .contact-item {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            color: #ff004f;
+            font-size: 24px;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -144,10 +249,10 @@
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
- </nav>
- <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 180px;"></i>
+    </nav>
+    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 180px;"></i>
     <h1>Welcome to My Portfolio</h1>
-    <p>My Name is Ahmed Abdullateef from nigeria</p>
+    <p>My Name is Ahmed Abdullateef from Nigeria</p>
     <p>I'm a passionate junior web developer</p>
 </header>
 
@@ -164,79 +269,76 @@
     <h2>My Services</h2>
     <div class="service">
         <i class="fa fa-user-circle" aria-hidden="true"></i>
-        <h3>front-end Development</h3>
-        <p>Building responsive and user-friendly websites,Using html css javascript as well as bootstrap as css framework</p>
+        <h3>Front-end Development</h3>
+        <p>Building responsive and user-friendly websites using HTML, CSS, JavaScript, and Bootstrap.</p>
     </div>
     <div class="service">
         <i class="fa fa-laptop" aria-hidden="true"></i>
         <h3>Back-end Development</h3>
-        <p>Have knowledge of Back-end tools like node.js along side with Mysql as the Database</p>
+        <p>Knowledge of back-end tools like Node.js alongside MySQL as the database.</p>
     </div>
     <div class="service">
         <i class="fa fa-code" aria-hidden="true"></i>
         <h3>Full-stack Development</h3>
-        <p>With The Knowledge of both my front-end and back-end skils am able to develop a fullstack application</p>
+        <p>With knowledge of both front-end and back-end skills, I can develop full-stack applications.</p>
     </div>
 </section>
 
 <section id="portfolio" class="portfolio">
     <h2>My Work</h2>
     <div class="portfolio-item">
-        <img src="Screenshot (101).png" alt="simple website from scratch">
+        <img src="Screenshot (101).png" alt="Simple website from scratch">
         <div class="overlay">
-            <h3>simple website from scratch</h3>
+            <h3>Simple Website from Scratch</h3>
             <a href="New folder/index2.html">View Project</a>
         </div>
     </div>
     <div class="portfolio-item">
         <img src="Screenshot (104).png" alt="Simple Web page slider">
         <div class="overlay">
-            <h3>Simple Web page slider</h3>
+            <h3>Simple Web Page Slider</h3>
             <a href="lesson/index.html">View Project</a>
         </div>
     </div>
     <div class="portfolio-item">
-        <img src="Screenshot (105).png" alt="front-end design of shool portal">
+        <img src="Screenshot (105).png" alt="Front-end design of school portal">
         <div class="overlay">
-            <h3>school portal</h3>
-            <a href="school portal/index.html"> View Project</a>
+            <h3>School Portal</h3>
+            <a href="school portal/index.html">View Project</a>
         </div>
     </div>
-
     <div class="portfolio-item">
         <img src="Screenshot (102).png" alt="Calculator">
         <div class="overlay">
             <h3>Calculator</h3>
             <a href="calculator/index.html">View Project</a>
         </div>
-        
     </div>
-
     <div class="portfolio-item">
-        <img src="Screenshot (103).png" alt="invioce">
+        <img src="Screenshot (103).png" alt="Invoice">
         <div class="overlay">
             <h3>Invoice</h3>
             <a href="reciept/receipt.html">View Project</a>
         </div>
-        
     </div>
 </section>
 
-
-<section id="contact" class="portfolio">
+<section id="contact" class="contact">
     <h2>Contact</h2>
-    <div class="portfolio-item">
-       <h3>Whatsapp-contact: </h3><a style="cursor: pointer;">+234 070 1000 3852</a>
-        </div>
+    <div class="contact-item">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        <a href="https://wa.me/2347010003852" target="_blank">WhatsApp: +234 070 1000 3852</a>
     </div>
-    <div class="portfolio-item">
-       <h3>Gmail: </h3><a style="cursor: pointer;">lateefahmed3852@gmail.com</a>
+    <div class="contact-item">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <a href="mailto:lateefahmed3852@gmail.com?subject=Inquiry&body=Hello Ahmed,">Send Email</a>
     </div>
-    <div class="portfolio-item">
-        <h3>Phone-Number:</h3><a style="cursor: pointer;">+234 070 1000 3852</a>
-        </div>
+    <div class="contact-item">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+        <a href="tel:+2347010003852">Phone: +234 070 1000 3852</a>
     </div>
 </section>
+
 <footer>
     <p>&copy; 2024 Ahmed Lateef. All rights reserved.</p>
 </footer>
